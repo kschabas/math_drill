@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Vocab Test</h1>
+  <h2>For the given word - Please select the correct definition</h2>
+  <h3>Word is: <span id="testword">Test</span></h3>
+  <form>
+      <ul>
+        <li>
+          <label for="word1">
+            <input type="radio" id="word1" name="answer" value="v1">
+            Word1
+          </label>
+        </li>
+        <li>
+          <label for="word2">
+            <input type="radio" id="word2" name="answer" value="v2">
+            Word2
+          </label>
+        </li>
+        <li>
+          <label for="word3">
+            <input type="radio" id="word3" name="answer" value="v3">
+            Word3
+          </label>
+        </li>
+        <li>
+          <label for="word1">
+            <input type="radio" id="word4" name="answer" value="v4">
+            Word4
+          </label>
+        </li>
+        <li>
+          <label for="word1">
+            <input type="radio" id="word5" name="answer" value="v5">
+            Word5
+          </label>
+        </li>
+    </ul>
+    <button type="button">Submit</button>
+  </form>
+  <div class="score-bar">
+    <p id="correct">Correct: 0</p>
+    <p id="incorrect">Wrong: 0</p>
+  </div>  
+
+  <footer><a href="../index.html">Return to main test page</a></footer>
+</body>
+</html>
