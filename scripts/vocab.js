@@ -1,7 +1,56 @@
+
+function ResetGame() {
+    index = displayRandomWord();
+    correct_radio_index = displayDefinitions(index);
+    document.getElementById('correct').textContent = `Correct: ${num_correct}`;
+    document.getElementById('incorrect').textContent = `Wrong: ${num_wrong}`;
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById(`word${i}`).checked = false;
+    }
+}
+
+function ButtonPush() {
+    var radio_num = GetRadioIndexSelected();
+    console.log(`You selected ${radio_num}`);
+    if (radio_num == -1) {
+        window.alert("Please select one of the options before clicking Submit");
+    }
+    if (radio_num == correct_radio_index)
+    {
+        CorrectAnswer();
+    }
+    else
+    {
+        IncorrectAnswer();
+    }
+    ResetGame();
+}
+
+function CorrectAnswer() {
+    num_correct += 1;
+    document.getElementById('vocab-score').style.backgroundColor = 'green';
+}
+
+function IncorrectAnswer() {
+    num_wrong += 1;
+    document.getElementById('vocab-score').style.backgroundColor = 'red';
+}
+
+function GetRadioIndexSelected() {
+    for (let i = 1; i <= 5; i++) {
+        if (document.getElementById(`word${i}`).checked) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+var index;
+var correct_radio_index;
+var num_correct = 0;
+var num_wrong = 0;
 const button = document.querySelector('#submit');
-button.addEventListener('click',e => {
-    window.alert("Pushed the button")
-});
+button.addEventListener('click',ButtonPush);
 
 function displayRandomWord() {
     const index = Math.floor(Math.random() * words.length);
@@ -31,7 +80,7 @@ function displayDefinitions(index) {
             displayDefinition(next_def,def_place_index);
         }
     }
+    return correct_place_index;
 }
 
-const index = displayRandomWord();
-displayDefinitions(index);
+ResetGame();
