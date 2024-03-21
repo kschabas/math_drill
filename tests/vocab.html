@@ -4,46 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles.css">
+  <script src="../scripts/vocab_data.js" defer></script>
+  <script src="../scripts/vocab.js" defer></script>
   <title>Document</title>
 </head>
 <body>
-  <h1>Vocab Test</h1>
-  <h2>For the given word - Please select the correct definition</h2>
-  <h3>Word is: <span id="testword">Test</span></h3>
+  <h1>Vocab Game</h1>
+  <h2>For the given word please select the correct definition</h2>
+  <h3>Word is: <span id="quizword"></span></h3>
   <form>
       <ul>
         <li>
           <label for="word1">
             <input type="radio" id="word1" name="answer" value="v1">
-            Word1
+            <span id="Def1">Def1</span>
           </label>
         </li>
         <li>
           <label for="word2">
             <input type="radio" id="word2" name="answer" value="v2">
-            Word2
+            <span id="Def2">Def2</span>
           </label>
         </li>
         <li>
           <label for="word3">
             <input type="radio" id="word3" name="answer" value="v3">
-            Word3
+            <span id="Def3">Def3</span>
           </label>
         </li>
         <li>
-          <label for="word1">
+          <label for="word4">
             <input type="radio" id="word4" name="answer" value="v4">
-            Word4
+            <span id="Def4">Def4</span>
           </label>
         </li>
         <li>
-          <label for="word1">
+          <label for="word5">
             <input type="radio" id="word5" name="answer" value="v5">
-            Word5
+            <span id="Def5">Def5</span>
           </label>
         </li>
     </ul>
-    <button type="button">Submit</button>
+    <button type="button" id="submit">Submit</button>
   </form>
   <div class="score-bar">
     <p id="correct">Correct: 0</p>
